@@ -23,9 +23,9 @@ app.use(express.static('static'));
 
 server.listen(8000);
 
-eurecaServer.clientProxy.render({});
+// eurecaServer.clientProxy.render({});
 
 // ECS fun
-var ECS = require('./ECS');
+var ECS = require('./static/serverSide/ECS');
 
 console.log(ECS.ECS);

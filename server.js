@@ -28,4 +28,7 @@ server.listen(8000);
 // ECS fun
 var ECS = require('./static/serverSide/ECS');
 
-console.log(ECS.ECS);
+var entity = new ECS.Entity();
+
+entity.addComponent({name:'s'});
+

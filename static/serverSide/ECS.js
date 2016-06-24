@@ -6,7 +6,7 @@ module.exports = {
 
     // 	game: {}
     // }
-    ECS: {
-	Entity: require('./Entity.js')
-    }
+    Entity: require('./Entity.js').entity,
+    Components: require('./Components.js').components,
+    Systems: require('./Systems.js').systems,
 };

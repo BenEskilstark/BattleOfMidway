@@ -9,7 +9,7 @@ eurecaServer.attach(server);
 
 
 //functions under "exports" namespace will be exposed to client side
-eurecaServer.exports.hello = function () {
+eurecaServer.exports.command = function () {
     console.log('Hello from client');
 }
 //------------------------------------------
@@ -19,6 +19,8 @@ app.get('/', function (req, res, next) {
     res.sendfile('index.html');
 });
 
-app.use(express.static('public'));
+app.use(express.static('static'));
 
 server.listen(8000);
+
+eurecaServer.clientProxy.render({});

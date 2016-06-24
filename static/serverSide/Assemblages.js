@@ -8,15 +8,60 @@ ECS = {
 };
 
 Assemblages = {
-    Ship: function Ship() {
-	var entity = new ECS.Entity();
-	entity.addComponent( new ECS.Components.Health() );
-	// entity.addComponent( new ECS.Components.Position() );
-	// entity.addComponent( new ECS.Components.Children() );
-	// entity.addComponent( new ECS.Components.Rotate() );
-	// etc, etc.
-	return entity;
-    }
+    Body: function Body() {
+        var entity = new ECS.Entity();
+        entity.addComponent(new ECS.Components.Children());
+        entity.addComponent(new ECS.Components.Movement());
+        entity.addComponent(new ECS.Components.Position());
+        entity.addComponent(new ECS.Components.Rotation());
+        entity.addComponent(new ECS.Components.Health());
+        entity.addComponent(new ECS.Components.Crash());
+        entity.addComponent(new ECS.Components.Collision());
+        entity.addComponent(new ECS.Components.Visible());
+        return entity;
+    },
+
+    Engine: function Engine() {
+        var entity = new ECS.Entity();
+        entity.addComponent(new ECS.Components.Ancestor());
+        entity.addComponent(new ECS.Components.Position());
+        entity.addComponent(new ECS.Components.Health());
+        entity.addComponent(new ECS.Components.Collision());
+        entity.addComponent(new ECS.Components.Visible());
+        return entity;
+    },
+
+    Projectile: function Projectile() {
+        var entity = new ECS.Entity();
+        entity.addComponent(new ECS.Components.Movement());
+        entity.addComponent(new ECS.Components.Position());
+        entity.addComponent(new ECS.Components.Crash());
+        entity.addComponent(new ECS.Components.Collision());
+        entity.addComponent(new ECS.Components.Visible());
+        return entity;
+    },
+
+    Turret: function Turret() {
+        var entity = new ECS.Entity();
+        entity.addComponent(new ECS.Components.Ancestor());
+        entity.addComponent(new ECS.Components.Children());
+        entity.addComponent(new ECS.Components.Position());
+        entity.addComponent(new ECS.Components.Rotation());
+        entity.addComponent(new ECS.Components.Health());
+        entity.addComponent(new ECS.Components.Collision());
+        entity.addComponent(new ECS.Components.Visible());
+        return entity;
+    },
+
+    Weapon: function Weapon() {
+        var entity = new ECS.Entity();
+        entity.addComponent(new ECS.Components.Ancestor());
+        entity.addComponent(new ECS.Components.Position());
+        entity.addComponent(new ECS.Components.Health());
+        entity.addComponent(new ECS.Components.Collision());
+        entity.addComponent(new ECS.Components.Visible());
+        return entity;
+    },
 };
 
 exports.assemblages = Assemblages;

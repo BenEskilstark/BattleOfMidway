@@ -18,6 +18,7 @@ Assemblages = {
         entity.addComponent(new ECS.Components.Crash());
         entity.addComponent(new ECS.Components.Collision());
         entity.addComponent(new ECS.Components.Visible());
+        entity.addComponent(new ECS.Components.Dimensions());
         return entity;
     },
 
@@ -28,6 +29,7 @@ Assemblages = {
         entity.addComponent(new ECS.Components.Health());
         entity.addComponent(new ECS.Components.Collision());
         entity.addComponent(new ECS.Components.Visible());
+        entity.addComponent(new ECS.Components.Dimensions());
         return entity;
     },
 
@@ -38,6 +40,7 @@ Assemblages = {
         entity.addComponent(new ECS.Components.Crash());
         entity.addComponent(new ECS.Components.Collision());
         entity.addComponent(new ECS.Components.Visible());
+        entity.addComponent(new ECS.Components.Dimensions());
         return entity;
     },
 
@@ -50,6 +53,7 @@ Assemblages = {
         entity.addComponent(new ECS.Components.Health());
         entity.addComponent(new ECS.Components.Collision());
         entity.addComponent(new ECS.Components.Visible());
+        entity.addComponent(new ECS.Components.Dimensions());
         return entity;
     },
 
@@ -60,6 +64,7 @@ Assemblages = {
         entity.addComponent(new ECS.Components.Health());
         entity.addComponent(new ECS.Components.Collision());
         entity.addComponent(new ECS.Components.Visible());
+        entity.addComponent(new ECS.Components.Dimensions());
         return entity;
     },
 };

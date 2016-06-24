@@ -5,18 +5,10 @@
         <link rel="stylesheet" type="text/css" href="css/midway.css">
     </head>
     <body>
-        <script>
-            var client = new Eureca.Client();
-
-            client.ready(function(proxy) {
-                proxy.hello();
-            });
-        </script>
+        <script src="clientSide/client.js"></script>
+        <script src="clientSide/renderFunctions.js"></script>
+        <script src="clientSide/render.js"></script>
 
         <canvas id="c" width="600" height="750" class="canvas"></canvas>
-        <script src="clientSide/frontend.js"></script>
-
-
-        <script>runGame()</script>
     </body>
 </html>

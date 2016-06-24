@@ -20,17 +20,10 @@ client.exports.render = function(renderData) {
 
 function renderObject(canvas, obj, renderFunc /* callback */) {
     canvas.save();
-    if (obj.targetAngle !== undefined) {
-        canvas.translate(obj.x, obj.y);
-        canvas.rotate(obj.angle);
-        renderFunc();
-        canvas.translate(-1 * obj.x, -1 * obj.y);
-    } else {
-        canvas.translate(obj.x + obj.width / 2, obj.y + obj.height / 2)
-        canvas.rotate(obj.angle);
-        renderFunc();
-        canvas.translate(-1 * (obj.x + obj.width / 2), -1 * (obj.y + obj.height / 2));
-    }
+    canvas.translate(obj.x, obj.y);
+    canvas.rotate(obj.angle);
+    renderFunc();
+    canvas.translate(-1 * obj.x, -1 * obj.y);
 
     canvas.restore();
 }

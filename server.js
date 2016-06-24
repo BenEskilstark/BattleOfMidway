@@ -20,11 +20,16 @@ server.listen(8000);
 // eurecaServer.clientProxy.render({});
 
 // Simple way to start a game.
-Game = require('./static/serverSide/game').Game;
+var Game = require('./static/serverSide/game').Game;
+var game = null;
 
 // functions under "exports" namespace will be exposed to client side
 eurecaServer.exports.beginGame = function () {
+    if (game !== null) {
+        game.endGame();
+    }
     var client = this.clientProxy;
-    game = new Game(client);
+    game = Game(client);
+    game.runGame();
 }
 //------------------------------------------

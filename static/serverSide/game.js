@@ -1,38 +1,31 @@
 var ECS = require('./ECS');
 
-exports.Game = function Game() {
-    // Demo ECS things.
+exports.Game = function Game(client) {
     var self = this;
 
-    // Make an entity with health, change the value, and observe that
-    // it worked.
-    var entity = new ECS.Entity();
-    entity.addComponent( new ECS.Components.Health() );
-    entity.print();
-    entity.components.health.value = 40;
-    entity.print();
-
-    // Keep track of multiple entities.
     var entities = {};
     var entity;
 
-    // Make 20 entities with health.
-    for(var i = 0; i < 20; i++) {
-	entity = new ECS.Entity();
-	entity.addComponent( new ECS.Components.Health() );
-	entities[entity.id = entity];
-    }
+    var initGameState = function() {
+	entity = new ECS.Assemblages.Body();
+	entity.components.position.value.x = 250;
+	entity.components.position.value.y = 250;
+	entity.components.position.value.angle = 2.5;
+	entity.components.dimensions.value.width = 100;
+	entity.components.dimensions.value.height = 100;
+	entity.components.movement.value.xVelocity = 2;
+	entity.components.movement.value.yVelocity = 3;
+	entity.components.rotation.value = 1;
+	entities[entity.Id] = entity;
+    }();
 
     ECS.entities = entities;
-
-    // Make a Ship.
-    entity = new ECS.Assemblages.Body();
-
-    entity.print();
 
     // All the systems, in order of execution per step/frame/tick.
     var systems = [
 	ECS.Systems.health,
+	ECS.Systems.motion,
+	ECS.Systems.sendToClient,
     ];
 
     var frameRate = 60;
@@ -55,7 +48,7 @@ exports.Game = function Game() {
 	// Run through the systems and have them do their thing on the
 	// entities with the components.
 	for(var i = 0, len = systems.length; i < len; i++) {
-	    systems[i](ECS.entities);
+	    systems[i](ECS.entities, client);
 	}
 
 	if (self._running !== true) {

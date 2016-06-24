@@ -89,4 +89,12 @@ Components.Dimensions = function ComponentDimensions(value) {
 }
 Components.Dimensions.prototype.name = 'dimensions';
 
+Components.ForClient = function ComponentForClient(value) {
+    value = value || true;
+    this.value = value;
+
+    return this;
+}
+Components.ForClient.prototype.name = 'forClient';
+
 exports.components = Components;

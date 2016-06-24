@@ -26,7 +26,7 @@ exports.Game = function Game() {
     ECS.entities = entities;
 
     // Make a Ship.
-    entity = new ECS.Assemblages.Ship();
+    entity = new ECS.Assemblages.Body();
 
     entity.print();
 

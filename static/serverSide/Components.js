@@ -31,7 +31,7 @@ Components.Ancestor = function ComponentAncestor(value) {
 
     return this;
 }
-Components.ancestor.prototype.name = 'ancestor';
+Components.Ancestor.prototype.name = 'ancestor';
 
 Components.Movement = function ComponentMovement(value) {
     value = value || {speed: 0, xVelocity: 0, yVelocity: 0};

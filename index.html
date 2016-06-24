@@ -1,16 +1,22 @@
-﻿<!doctype html>
 <html>
     <head>
-        <title>Engine.io test</title>
-        <script src="/eureca.js"></script>
+        <title>Midway Prototype</title>
+        <script src="/eureca.js"> </script>
+        <link rel="stylesheet" type="text/css" href="css/midway.css">
     </head>
-    <body>    
+    <body>
         <script>
             var client = new Eureca.Client();
 
-            client.ready(function (proxy) {
+            client.ready(function(proxy) {
                 proxy.hello();
             });
         </script>
+
+        <canvas id="c" width="600" height="750" class="canvas"></canvas>
+        <script src="js/midway.js"></script>
+
+
+        <script>runGame()</script>
     </body>
 </html>

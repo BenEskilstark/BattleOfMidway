@@ -28,7 +28,9 @@ server.listen(8000);
 // ECS fun
 var ECS = require('./static/serverSide/ECS');
 
+// Demo component
 var entity = new ECS.Entity();
-
-entity.addComponent({name:'s'});
-
+entity.addComponent( new ECS.Components.Health() );
+entity.print();
+entity.components.health.value = 40;
+entity.print();
